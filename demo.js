@@ -22,10 +22,6 @@ import Checkbox from '@mui/joy/Checkbox';
 import Add from '@mui/icons-material/Add';
 import Remove from '@mui/icons-material/Remove';
 
-import Chip from '@mui/joy/Chip';
-import ChipDelete from '@mui/joy/ChipDelete';
-import DeleteForever from '@mui/icons-material/DeleteForever';
-
 const marks = [
   {
     value: 0,
@@ -102,47 +98,27 @@ const TextareaColors = () => {
         variant="outlined"
         color="warning"
       />
-      <Box sx={{ display: 'flex', gap: 3, alignItems: 'center' }}>
-        <Checkbox uncheckedIcon={<Close />} label="Check Box" />
-        <Switch
-          color={dark ? 'primary' : 'danger'}
-          componentsProps={{ input: { 'aria-label': 'dark mode' } }}
-          startDecorator={
-            <LocalFireDepartmentRoundedIcon
-              sx={{ color: dark ? 'text.tertiary' : 'danger.600' }}
-            />
-          }
-          endDecorator={
-            <WavesRoundedIcon
-              sx={{ color: dark ? 'primary.500' : 'text.tertiary' }}
-            />
-          }
-          checked={dark}
-          onChange={(event) => setDark(event.target.checked)}
-        />
-
+      <Checkbox uncheckedIcon={<Close />} label="Check Box" />
+      <Switch
+        color={dark ? 'primary' : 'danger'}
+        componentsProps={{ input: { 'aria-label': 'dark mode' } }}
+        startDecorator={
+          <LocalFireDepartmentRoundedIcon
+            sx={{ color: dark ? 'text.tertiary' : 'danger.600' }}
+          />
+        }
+        endDecorator={
+          <WavesRoundedIcon
+            sx={{ color: dark ? 'primary.500' : 'text.tertiary' }}
+          />
+        }
+        checked={dark}
+        onChange={(event) => setDark(event.target.checked)}
+      />
+      <Box>
         <Badge badgeContent="1" color="danger" variant="outlined">
           <Typography fontSize="xl">🛒</Typography>
         </Badge>
-
-        <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-          <Chip
-            variant="outlined"
-            color="danger"
-            onClick={() => alert('You Clicked the Chip!')}
-            endDecorator={
-              <ChipDelete
-                color="danger"
-                variant="plain"
-                onClick={() => alert('You Clicked the delete button!')}
-              >
-                <DeleteForever />
-              </ChipDelete>
-            }
-          >
-            Clear
-          </Chip>
-        </Box>
       </Box>
       <Box
         sx={{
