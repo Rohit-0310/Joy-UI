@@ -26,6 +26,8 @@ import Chip from '@mui/joy/Chip';
 import ChipDelete from '@mui/joy/ChipDelete';
 import DeleteForever from '@mui/icons-material/DeleteForever';
 
+import Alert from '@mui/joy/Alert';
+
 const marks = [
   {
     value: 0,
@@ -96,6 +98,9 @@ const TextareaColors = () => {
           marks={marks}
         />
       </Box>
+      <Alert color="success" variant="outlined">
+        This is an alert using the outlined variant. Success Alert
+      </Alert>
       <Textarea
         label="Warning"
         placeholder="Type in here…"
