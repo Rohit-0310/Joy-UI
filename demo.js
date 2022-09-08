@@ -27,6 +27,15 @@ import ChipDelete from '@mui/joy/ChipDelete';
 import DeleteForever from '@mui/icons-material/DeleteForever';
 
 import Alert from '@mui/joy/Alert';
+import Box from '@mui/joy/Box';
+import Radio from '@mui/joy/Radio';
+import RadioGroup from '@mui/joy/RadioGroup';
+import Sheet from '@mui/joy/Sheet';
+
+import Typography from '@mui/joy/Typography';
+
+import IconButton from '@mui/joy/IconButton';
+import PlaylistAddCheckCircleRoundedIcon from '@mui/icons-material/PlaylistAddCheckCircleRounded';
 
 const marks = [
   {
@@ -54,6 +63,8 @@ const TextareaColors = () => {
   const [dark, setDark] = React.useState(false);
   const [count, setCount] = React.useState(0);
   const [showZero, setShowZero] = React.useState(false);
+  const [variant, setVariant] = React.useState('solid');
+
   return (
     <Box
       sx={{
@@ -194,6 +205,96 @@ const TextareaColors = () => {
           />
         </Box>
       </Box>
+
+      <Alert
+        variant="soft"
+        color="success"
+        startDecorator={<PlaylistAddCheckCircleRoundedIcon />}
+        endDecorator={
+          <Button
+            size="sm"
+            variant="outlined"
+            color="success"
+            sx={{
+              textTransform: 'uppercase',
+              fontSize: 'xs',
+              fontWeight: 'xl',
+            }}
+          >
+            Close
+          </Button>
+        }
+      >
+        Your message was sent successfully.
+      </Alert>
+
+      {/* //const [variant, setVariant] = React.useState('solid'); */}
+
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 3,
+        }}
+      >
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, minmax(150px, 1fr))',
+            gap: 1,
+          }}
+        >
+          <Alert variant={variant} color="primary">
+            Primary
+          </Alert>
+          <Alert variant={variant} color="neutral">
+            Neutral
+          </Alert>
+          <Alert variant={variant} color="danger">
+            Danger
+          </Alert>
+          <Alert variant={variant} color="info">
+            Info
+          </Alert>
+          <Alert variant={variant} color="success">
+            Success
+          </Alert>
+          <Alert variant={variant} color="warning">
+            Warning
+          </Alert>
+        </Box>
+        <Sheet
+          sx={{
+            background: 'transparent',
+            pl: 4,
+            borderLeft: '1px solid',
+            borderColor: 'divider',
+          }}
+        >
+          <Typography
+            level="body2"
+            fontWeight="xl"
+            id="variant-label"
+            textColor="text.primary"
+            mb={1}
+          >
+            Variant:
+          </Typography>
+          <RadioGroup
+            size="sm"
+            aria-labelledby="variant-label"
+            name="variant"
+            value={variant}
+            onChange={(event) => setVariant(event.target.value)}
+          >
+            <Radio label="Solid" value="solid" />
+            <Radio label="Soft" value="soft" />
+            <Radio label="Outlined" value="outlined" />
+            <Radio label="Plain" value="plain" />
+          </RadioGroup>
+        </Sheet>
+      </Box>
+
       <TextField
         label="Label"
         placeholder="Type in here…"
