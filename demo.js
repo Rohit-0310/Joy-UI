@@ -75,6 +75,7 @@ const TextareaColors = () => {
         flexWrap: 'wrap',
       }}
     >
+      {/* Textarea */}
       <Textarea
         label="Primary"
         placeholder="Type in here…"
