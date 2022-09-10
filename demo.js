@@ -51,8 +51,8 @@ const marks = [
     label: '35°C',
   },
   {
-    value: 37,
-    label: '37°C',
+    value: 47,
+    label: '47°C',
   },
   {
     value: 37,
