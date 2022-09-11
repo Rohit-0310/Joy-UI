@@ -9,6 +9,7 @@ import Checkbox from '@mui/joy/Checkbox';
 import Close from '@mui/icons-material/Close';
 import Select from '@mui/joy/Select';
 import Option from '@mui/joy/Option';
+// Slider
 import Box from '@mui/joy/Box';
 import Slider from '@mui/joy/Slider';
 import Switch from '@mui/joy/Switch';
